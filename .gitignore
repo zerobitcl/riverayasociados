@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs & caches
+*.log
+.cache/
+.turbo/

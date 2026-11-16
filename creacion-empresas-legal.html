@@ -30,6 +30,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
@@ -80,44 +81,44 @@
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-            <div class="flex justify-between h-20 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+            <div class="flex justify-between h-[4.25rem] lg:h-20 items-center gap-4">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-3 group">
                         <div class="w-10 h-10 bg-primary rounded flex items-center justify-center border-b-2 border-secondary shadow-sm group-hover:bg-slate-700 transition-colors">
                             <span class="font-serif font-bold text-lg text-white">R<span class="text-secondary">&amp;</span>A</span>
                         </div>
-                        <span class="font-serif text-2xl font-bold text-primary tracking-tight">
+                        <span class="ra-brand ra-brand-text">
                             RIVERA <span class="text-secondary">&amp;</span> ASOCIADOS
                         </span>
                     </a>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html#inicio" class="text-gray-600 hover:text-secondary transition-colors font-medium">Inicio</a>
-                    <a href="index.html#servicios" class="text-gray-600 hover:text-secondary transition-colors font-medium">Servicios</a>
-                    <a href="index.html#especialidades" class="text-gray-600 hover:text-secondary transition-colors font-medium">Especialidades</a>
-                    <a href="index.html#economia" class="text-gray-600 hover:text-secondary transition-colors font-medium flex items-center gap-1"><i data-lucide="trending-up" class="w-4 h-4"></i> Mercado</a>
-                    <a href="index.html#experiencia" class="text-gray-600 hover:text-secondary transition-colors font-medium">Trayectoria</a>
-                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-6 py-2.5 rounded-md hover:bg-slate-700 transition-colors font-medium shadow-md inline-flex items-center gap-2">
+                <div class="ra-desktop-nav gap-6 xl:gap-7">
+                    <a href="index.html#inicio" class="ra-nav-link">Inicio</a>
+                    <a href="index.html#servicios" class="ra-nav-link">Servicios</a>
+                    <a href="index.html#especialidades" class="ra-nav-link">Especialidades</a>
+                    <a href="index.html#economia" class="ra-nav-link inline-flex items-center gap-1.5"><i data-lucide="trending-up" class="w-4 h-4"></i> Mercado</a>
+                    <a href="index.html#experiencia" class="ra-nav-link">Trayectoria</a>
+                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="ra-nav-cta">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
-                        Agendar Consulta
+                        Agendar
                     </a>
                 </div>
-                <div class="md:hidden flex items-center">
+                <div class="ra-mobile-toggle">
                     <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-primary focus:outline-none" aria-expanded="false" aria-controls="mobile-menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#inicio" class="block px-3 py-2 text-gray-600 font-medium">Inicio</a>
-                <a href="index.html#servicios" class="block px-3 py-2 text-gray-600 font-medium">Servicios</a>
-                <a href="index.html#especialidades" class="block px-3 py-2 text-gray-600 font-medium">Especialidades</a>
-                <a href="index.html#economia" class="block px-3 py-2 text-gray-600 font-medium">Mercado</a>
-                <a href="index.html#experiencia" class="block px-3 py-2 text-gray-600 font-medium">Trayectoria</a>
-                <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 text-secondary font-bold"><i data-lucide="calendar" class="w-4 h-4"></i> Agendar Consulta</a>
+        <div id="mobile-menu" class="hidden ra-mobile-panel">
+            <div class="px-4 sm:px-6 py-4 space-y-0.5">
+                <a href="index.html#inicio" class="ra-mobile-link">Inicio</a>
+                <a href="index.html#servicios" class="ra-mobile-link">Servicios</a>
+                <a href="index.html#especialidades" class="ra-mobile-link">Especialidades</a>
+                <a href="index.html#economia" class="ra-mobile-link">Mercado</a>
+                <a href="index.html#experiencia" class="ra-mobile-link">Trayectoria</a>
+                <div class="pt-3 mt-2 border-t border-slate-100"><a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="ra-mobile-cta"><i data-lucide="calendar" class="w-4 h-4"></i> Agendar Consulta</a></div>
             </div>
         </div>
     </nav>
@@ -138,7 +139,7 @@
                     Acompañamiento para constitución de sociedades, redacción de contratos y cumplimiento normativo sin fricciones. Enfoque corporativo: claridad, prevención de conflictos y gobierno mínimo viable para escalar con tranquilidad.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white px-8 py-4 rounded-md font-semibold text-center hover:bg-amber-700 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white px-8 py-4 rounded-md font-semibold text-center hover:bg-amber-700 transition-colors shadow-lg flex items-center justify-center gap-2">
                         Agendar revisión legal
                         <i data-lucide="calendar" class="w-5 h-5"></i>
                     </a>
@@ -229,7 +230,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-400">Llámanos / WhatsApp</p>
-                                <p class="font-medium text-lg">+56 9 9326 8186</p>
+                                <a href="tel:+56993268186" data-event="phone_click" class="font-medium text-lg hover:text-secondary transition-colors">+56 9 9326 8186</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -238,7 +239,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-400">Email Directo</p>
-                                <p class="font-medium text-lg">nriveraalfaro@gmail.com</p>
+                                <a href="mailto:nriveraalfaro@gmail.com" data-event="email_click" class="font-medium text-lg hover:text-secondary transition-colors">nriveraalfaro@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -261,7 +262,7 @@
                         <p class="text-gray-600 mb-8 leading-relaxed">
                             Evita esperas. Escríbenos directo a WhatsApp y Nelson Rivera evaluará tu caso de forma confidencial hoy mismo.
                         </p>
-                        <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20la%20web%20y%20me%20interesa%20la%20creaci%C3%B3n%20de%20mi%20empresa%20y%20asesor%C3%ADa%20legal%20%28SpA%20o%20EIRL%29" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 text-white font-bold text-lg py-4 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-3 shadow-lg hover:shadow-green-500/30 hover:-translate-y-1">
+                        <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20la%20web%20y%20me%20interesa%20la%20creaci%C3%B3n%20de%20mi%20empresa%20y%20asesor%C3%ADa%20legal%20%28SpA%20o%20EIRL%29" data-event="click_whatsapp" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 text-white font-bold text-lg py-4 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-3 shadow-lg hover:shadow-green-500/30 hover:-translate-y-1">
                             <i data-lucide="message-circle" class="w-6 h-6"></i>
                             Iniciar chat en WhatsApp
                         </a>
@@ -290,7 +291,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="index.html#inicio" class="hover:text-secondary transition-colors">Inicio</a></li>
                         <li><a href="index.html#servicios" class="hover:text-secondary transition-colors">Nuestros Servicios</a></li>
                         <li><a href="index.html#especialidades" class="hover:text-secondary transition-colors">Especialidades</a></li>
@@ -299,7 +300,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Especialidades</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="contabilidad-otec-sence.html" class="hover:text-secondary transition-colors">Asesoría Contable para OTEC en Chile</a></li>
                         <li><a href="contabilidad-constructoras-iva.html" class="hover:text-secondary transition-colors">Contadores para Constructoras: Recuperación de IVA 27 bis</a></li>
                         <li><a href="operacion-renta-pymes.html" class="hover:text-secondary transition-colors">Operación Renta para PYMES</a></li>
@@ -310,7 +311,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="#" class="hover:text-secondary transition-colors">Políticas de Privacidad</a></li>
                         <li><a href="#" class="hover:text-secondary transition-colors">Términos y Condiciones</a></li>
                     </ul>
@@ -322,7 +323,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20necesito%20asesor%C3%ADa%20legal%20empresarial%20o%20constituci%C3%B3n%20de%20sociedad." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center group">
+    <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20necesito%20asesor%C3%ADa%20legal%20empresarial%20o%20constituci%C3%B3n%20de%20sociedad." data-event="click_whatsapp" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center group">
         <i data-lucide="message-circle" class="w-8 h-8"></i>
         <span class="absolute right-16 bg-white text-gray-800 text-sm font-bold px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             ¡Hablemos directo!
@@ -355,5 +356,6 @@
             }
         });
     </script>
+    <script src="./tracking.js" defer></script>
 </body>
 </html>

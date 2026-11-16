@@ -30,6 +30,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -77,55 +78,60 @@
 
     <!-- Navegación -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-            <div class="flex justify-between h-20 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+            <div class="flex justify-between h-[4.25rem] lg:h-20 items-center gap-4">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center gap-3 group">
-                        <div class="w-10 h-10 bg-primary rounded flex items-center justify-center border-b-2 border-secondary shadow-sm group-hover:bg-slate-700 transition-colors">
-                            <span class="font-serif font-bold text-lg text-white">R<span class="text-secondary">&</span>A</span>
+                <div class="flex-shrink-0 flex items-center min-w-0">
+                    <a href="#inicio" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 bg-primary rounded flex items-center justify-center border-b-2 border-secondary shadow-sm group-hover:bg-slate-700 transition-colors">
+                            <span class="font-serif font-bold text-base sm:text-lg text-white">R<span class="text-secondary">&amp;</span>A</span>
                         </div>
-                        <span class="font-serif text-2xl font-bold text-primary tracking-tight">
-                            RIVERA <span class="text-secondary">&</span> ASOCIADOS
+                        <span class="ra-brand ra-brand-text truncate">
+                            RIVERA <span class="text-secondary">&amp;</span> ASOCIADOS
                         </span>
                     </a>
                 </div>
                 
-                <!-- Menú Desktop: enlaces a landings indexables (no anclas locales) -->
-                <div class="hidden md:flex space-x-5 lg:space-x-6 items-center">
-                    <a href="#inicio" class="text-gray-600 hover:text-secondary transition-colors font-medium">Inicio</a>
-                    <a href="gestion-contable-tributaria.html" class="text-gray-600 hover:text-secondary transition-colors font-medium">Gestión Contable</a>
-                    <a href="outsourcing-contable-pymes.html" class="text-gray-600 hover:text-secondary transition-colors font-medium">Outsourcing PYMES</a>
-                    <a href="contabilidad-transporte.html" class="text-gray-600 hover:text-secondary transition-colors font-medium">Transporte</a>
-                    <a href="facilitador-reuf.html" class="text-gray-600 hover:text-secondary transition-colors font-medium">Facilitador REUF</a>
-                    <a href="#economia" class="text-gray-600 hover:text-secondary transition-colors font-medium flex items-center gap-1"><i data-lucide="trending-up" class="w-4 h-4"></i> Mercado</a>
-                    <a href="#experiencia" class="text-gray-600 hover:text-secondary transition-colors font-medium">Trayectoria</a>
-                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-6 py-2.5 rounded-md hover:bg-slate-700 transition-colors font-medium shadow-md inline-flex items-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        Agendar Consulta
+                <!-- Desktop: desde lg para evitar menú aplastado en tablet -->
+                <div class="ra-desktop-nav gap-5 xl:gap-6">
+                    <a href="#inicio" class="ra-nav-link">Inicio</a>
+                    <a href="gestion-contable-tributaria.html" class="ra-nav-link">Gestión Contable</a>
+                    <a href="outsourcing-contable-pymes.html" class="ra-nav-link">Outsourcing</a>
+                    <a href="contabilidad-transporte.html" class="ra-nav-link">Transporte</a>
+                    <a href="facilitador-reuf.html" class="ra-nav-link">REUF</a>
+                    <a href="#economia" class="ra-nav-link inline-flex items-center gap-1.5"><i data-lucide="trending-up" class="w-3.5 h-3.5 opacity-70"></i> Mercado</a>
+                    <a href="#experiencia" class="ra-nav-link">Trayectoria</a>
+                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="ra-nav-cta">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                        Agendar
                     </a>
                 </div>
 
-                <!-- Botón Menú Móvil -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                <!-- Botón Menú Móvil / Tablet -->
+                <div class="ra-mobile-toggle">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-50 hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Menú Móvil desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#inicio" class="block px-3 py-2 text-gray-600 font-medium">Inicio</a>
-                <a href="gestion-contable-tributaria.html" class="block px-3 py-2 text-gray-600 font-medium">Gestión Contable</a>
-                <a href="outsourcing-contable-pymes.html" class="block px-3 py-2 text-gray-600 font-medium">Outsourcing Contable PYMES</a>
-                <a href="contabilidad-transporte.html" class="block px-3 py-2 text-gray-600 font-medium">Contabilidad Transporte</a>
-                <a href="facilitador-reuf.html" class="block px-3 py-2 text-gray-600 font-medium">Facilitador REUF</a>
-                <a href="#economia" class="block px-3 py-2 text-gray-600 font-medium">Mercado</a>
-                <a href="#experiencia" class="block px-3 py-2 text-gray-600 font-medium">Trayectoria</a>
-                <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 text-secondary font-bold"><i data-lucide="calendar" class="w-4 h-4"></i> Agendar Consulta</a>
+        <!-- Menú Móvil / Tablet -->
+        <div id="mobile-menu" class="hidden ra-mobile-panel">
+            <div class="px-4 sm:px-6 py-4 space-y-0.5">
+                <a href="#inicio" class="ra-mobile-link">Inicio</a>
+                <a href="gestion-contable-tributaria.html" class="ra-mobile-link">Gestión Contable</a>
+                <a href="outsourcing-contable-pymes.html" class="ra-mobile-link">Outsourcing Contable PYMES</a>
+                <a href="contabilidad-transporte.html" class="ra-mobile-link">Contabilidad Transporte</a>
+                <a href="facilitador-reuf.html" class="ra-mobile-link">Facilitador REUF</a>
+                <a href="#economia" class="ra-mobile-link">Mercado</a>
+                <a href="#experiencia" class="ra-mobile-link">Trayectoria</a>
+                <div class="pt-3 mt-2 border-t border-slate-100">
+                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="ra-mobile-cta">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Agendar consulta
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -141,7 +147,7 @@
                     Transformamos conocimiento técnico en ventajas competitivas: optimización financiera, outsourcing contable para PYMES y relatoría REUF de alto impacto alineada al mercado laboral.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white px-8 py-4 rounded-md font-semibold text-center hover:bg-amber-700 transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <a href="https://calendar.app.google/CZwRZoqy9HMQuGjM9" data-event="generate_lead" target="_blank" rel="noopener noreferrer" class="bg-secondary text-white px-8 py-4 rounded-md font-semibold text-center hover:bg-amber-700 transition-colors shadow-lg flex items-center justify-center gap-2">
                         Evaluemos tu caso hoy
                         <i data-lucide="calendar" class="w-5 h-5"></i>
                     </a>
@@ -188,7 +194,7 @@
                     <h2 class="text-secondary font-bold tracking-widest uppercase text-sm mb-3">Servicios especializados</h2>
                     <h3 id="accesos-servicios-title" class="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">Accesos directos a nuestras soluciones</h3>
                 </div>
-                <p class="text-slate-400 text-sm md:text-base max-w-md">Enlaces a las páginas de servicio con mayor demanda comercial y oportunidad de búsqueda en Chile.</p>
+                <p class="text-slate-400 text-sm md:text-base max-w-md">Enlaces a las páginas de servicio con mayor demanda comercial y oportunidad de búsqueda en Chile. Si buscas <a href="gestion-contable-tributaria.html" class="text-secondary hover:text-amber-400 underline underline-offset-2">asesoría contable &amp; legal para empresas</a>, también revisa nuestra <a href="creacion-empresas-legal.html" class="text-secondary hover:text-amber-400 underline underline-offset-2">creación de empresas y soporte legal</a>.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <a href="gestion-contable-tributaria.html" class="group flex flex-col justify-between rounded-xl border border-slate-700 bg-slate-800/60 p-6 hover:border-secondary/50 hover:bg-slate-800 transition-all duration-300">
@@ -318,22 +324,22 @@
             <div class="ra-marquee-fade ra-marquee-fade--r" aria-hidden="true"></div>
             <div class="ra-logo-marquee-track">
                 <div class="ra-logo-row">
-                    <img src="./images/1.png" alt="Logo cliente 1" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/2.png" alt="Logo cliente 2" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/3.png" alt="Logo cliente 3" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/4.png" alt="Logo cliente 4" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/5.png" alt="Logo cliente 5" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/6.png" alt="Logo cliente 6" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/7.png" alt="Logo cliente 7" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/1.png" alt="Logo de empresa cliente de consultoría Rivera y Asociados" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/2.png" alt="Logo de empresa cliente de asesoría contable y tributaria" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/3.png" alt="Logo de empresa cliente de estrategia comercial B2B" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/4.png" alt="Logo de empresa cliente de capacitación SENCE y REUF" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/5.png" alt="Logo de PYME cliente de outsourcing contable" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/6.png" alt="Logo de empresa cliente de gestión tributaria en Chile" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/7.png" alt="Logo de empresa cliente de consultoría empresarial" width="160" height="64" loading="lazy" decoding="async">
                 </div>
                 <div class="ra-logo-row" aria-hidden="true">
-                    <img src="./images/1.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/2.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/3.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/4.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/5.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/6.png" alt="" width="160" height="64" loading="lazy" decoding="async">
-                    <img src="./images/7.png" alt="" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/1.png" alt="Logo de empresa cliente de consultoría Rivera y Asociados" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/2.png" alt="Logo de empresa cliente de asesoría contable y tributaria" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/3.png" alt="Logo de empresa cliente de estrategia comercial B2B" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/4.png" alt="Logo de empresa cliente de capacitación SENCE y REUF" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/5.png" alt="Logo de PYME cliente de outsourcing contable" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/6.png" alt="Logo de empresa cliente de gestión tributaria en Chile" width="160" height="64" loading="lazy" decoding="async">
+                    <img src="./images/7.png" alt="Logo de empresa cliente de consultoría empresarial" width="160" height="64" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -745,7 +751,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-400">Llámanos / WhatsApp</p>
-                                <p class="font-medium text-lg">+56 9 9326 8186</p>
+                                <a href="tel:+56993268186" data-event="phone_click" class="font-medium text-lg hover:text-secondary transition-colors">+56 9 9326 8186</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -754,7 +760,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-400">Email Directo</p>
-                                <p class="font-medium text-lg">nriveraalfaro@gmail.com</p>
+                                <a href="mailto:nriveraalfaro@gmail.com" data-event="email_click" class="font-medium text-lg hover:text-secondary transition-colors">nriveraalfaro@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -779,7 +785,7 @@
                         <p class="text-gray-600 mb-8 leading-relaxed">
                             Evita esperas. Escríbenos directo a WhatsApp y Nelson Rivera evaluará tu caso de forma confidencial hoy mismo.
                         </p>
-                        <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20la%20web%20y%20me%20interesa%20una%20asesor%C3%ADa%20a%20medida%20con%20Rivera%20%26%20Asociados" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 text-white font-bold text-lg py-4 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-3 shadow-lg hover:shadow-green-500/30 hover:-translate-y-1">
+                        <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20la%20web%20y%20me%20interesa%20una%20asesor%C3%ADa%20a%20medida%20con%20Rivera%20%26%20Asociados" data-event="click_whatsapp" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 text-white font-bold text-lg py-4 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 flex justify-center items-center gap-3 shadow-lg hover:shadow-green-500/30 hover:-translate-y-1">
                             <i data-lucide="message-circle" class="w-6 h-6"></i>
                             Iniciar chat en WhatsApp
                         </a>
@@ -809,7 +815,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="#inicio" class="hover:text-secondary transition-colors">Inicio</a></li>
                         <li><a href="gestion-contable-tributaria.html" class="hover:text-secondary transition-colors">Gestión Contable y Tributaria</a></li>
                         <li><a href="outsourcing-contable-pymes.html" class="hover:text-secondary transition-colors">Outsourcing Contable PYMES</a></li>
@@ -820,7 +826,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Especialidades</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="contabilidad-otec-sence.html" class="hover:text-secondary transition-colors">Asesoría Contable para OTEC en Chile</a></li>
                         <li><a href="contabilidad-constructoras-iva.html" class="hover:text-secondary transition-colors">Contadores para Constructoras: Recuperación de IVA 27 bis</a></li>
                         <li><a href="operacion-renta-pymes.html" class="hover:text-secondary transition-colors">Operación Renta para PYMES</a></li>
@@ -831,7 +837,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-2 text-sm leading-relaxed">
                         <li><a href="#" class="hover:text-secondary transition-colors">Políticas de Privacidad</a></li>
                         <li><a href="#" class="hover:text-secondary transition-colors">Términos y Condiciones</a></li>
                     </ul>
@@ -844,7 +850,7 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20tu%20sitio%20web%20y%20quisiera%20evaluar%20una%20consultoría%20o%20capacitación." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center group">
+    <a href="https://wa.me/56993268186?text=Hola%20Nelson,%20vengo%20desde%20tu%20sitio%20web%20y%20quisiera%20evaluar%20una%20consultoría%20o%20capacitación." data-event="click_whatsapp" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50 flex items-center justify-center group">
         <i data-lucide="message-circle" class="w-8 h-8"></i>
         <span class="absolute right-16 bg-white text-gray-800 text-sm font-bold px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             ¡Hablemos directo!
@@ -872,7 +878,9 @@
         const menu = document.getElementById('mobile-menu');
         
         btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+            const open = menu.classList.toggle('hidden') === false;
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
         });
 
         // Efecto Navbar al hacer scroll
@@ -923,5 +931,6 @@
 
         window.addEventListener('DOMContentLoaded', loadIndicators);
     </script>
+    <script src="./tracking.js" defer></script>
 </body>
 </html>
