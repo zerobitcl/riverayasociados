@@ -61,6 +61,17 @@
       link_text: (a.textContent || '').trim().slice(0, 80)
     };
 
+    if (name === 'generate_lead') {
+      params.event_category = 'engagement';
+      params.event_label = 'calendar_schedule';
+    } else if (name === 'click_whatsapp') {
+      params.event_category = 'engagement';
+      params.event_label = 'whatsapp';
+    } else if (name === 'phone_click') {
+      params.event_category = 'engagement';
+      params.event_label = 'phone';
+    }
+
     track(name, params);
     if (name === 'generate_lead') {
       track('agendar_consulta', params);
